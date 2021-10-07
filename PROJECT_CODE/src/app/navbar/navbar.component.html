@@ -1,0 +1,61 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'">
+    <mat-toolbar>
+      <div class="sidenav-close">  
+        <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()">
+        <mat-icon color="primary">close</mat-icon>
+        </button>
+      </div>
+    </mat-toolbar>
+    <mat-nav-list >
+      <div class="perfil">
+        <img src="../../assets/img/yuri.png">
+        <h2>Yuri Braga</h2>
+        <div class="social-button-container">
+          <a mat-mini-fab href="https://github.com/y-randhal" color="primary">
+            <i class="fab fa-github-alt"></i>
+          </a>
+          <a mat-mini-fab href="https://www.linkedin.com/in/yuri-randhal-rodrigues-braga-36a1bb17b/" color="primary">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a mat-mini-fab href="https://www.instagram.com/y_randhal/" color="primary">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+      <hr class="nav-spacing">
+      <a mat-list-item routerLink=""><mat-icon color="primary" class="sidenav-icon">home</mat-icon><p class="sidenav-text">Home</p></a>
+      <a mat-list-item routerLink="/about-section"><mat-icon color="primary" class="sidenav-icon">account_circle</mat-icon><span class="sidenav-text">About</span></a>
+      <a mat-list-item routerLink="/projects-section"><mat-icon color="primary" class="sidenav-icon">perm_media</mat-icon><span class="sidenav-text">Projects</span></a>
+      <hr class="nav-spacing">
+      <mat-slide-toggle color="primary" class="dark-mode-toggle" (change)="onDarkModeSwitched($event)"><p>Dark Mode</p></mat-slide-toggle>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar class="portfolio-page-title">
+      <button 
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()">
+        <mat-icon color="primary" aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+    </mat-toolbar>
+
+    <router-outlet></router-outlet>
+    
+    <div class="footer-container">
+      <hr class="spacer">
+      <div class="footer-text">
+        <p> Copyright © 2021 <a href="https://github.com/y-randhal"><b>Yuri Braga</b></a>. All rights reserved. </p>
+      </div>
+    </div>
+    <app-contact-form-button></app-contact-form-button>
+  </mat-sidenav-content>
+</mat-sidenav-container>

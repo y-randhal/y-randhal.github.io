@@ -1,0 +1,68 @@
+#about-container{
+    padding: 3%;
+    min-width: 250px;
+        .mat-card{
+          font-family: 'Montserrat', sans-serif;
+          border: 1px solid;
+  
+          .card-spacer{
+            width: 80%;
+          } 
+          .mat-icon{
+            font-size: 4rem;
+          }
+          mat-card-header{
+            display: flex;
+            flex-wrap: wrap;
+            text-align: center;
+            justify-content: center;
+            
+            h1{
+              
+              font-size: 2rem;
+            }
+          }
+          mat-card-content{
+            .resume-courses{
+              a{
+                color: inherit;
+              }
+            }
+            .resume-about{
+              text-align: justify;
+              h2{
+                text-align: center;
+                padding-top: 1rem;
+              }
+              p{
+              margin: 0 auto;
+              width: 75%;
+              padding-bottom: 1rem;
+              }
+            }
+            .wrap-cols{
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: space-around;
+              p{
+                text-align: justify;
+              }
+              .resume-col-1{
+                padding: 1rem;
+                min-width: 200px;
+                width: 60%;
+              }
+              .resume-col-2{
+                padding: 1rem;
+                width: 20%;
+                min-width: 200px;
+              }
+            }
+          }
+        }
+  .download-resume-button{
+    margin: 25px;
+    display: flex;
+    justify-content: center;
+  }
+}
